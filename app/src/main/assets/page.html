@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+<center>
+    <h1>Prezenty:</h1>
+    <ul id="presentsList">
+
+    </ul>
+
+
+    <button onclick="activateVoiceRecognition()">Dodaj</button><br><br>
+    <button onclick="generate()" >Generuj</button>
+</center>
+<script type="text/javascript">
+    function activateVoiceRecognition(){
+        activity.voiceRecognition()
+    }
+
+var presents = new Array();
+
+    function addPresent(present){
+        var li = document.createElement('li')
+        li.appendChild(document.createTextNode(present))
+        document.getElementById("presentsList").appendChild(li)
+    }
+
+    function generate(){
+        activity.generateCard();
+    }
+</script>
+</body>
+</html>
